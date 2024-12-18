@@ -23,3 +23,8 @@ ks('i', '<Down>',   '<cmd>echoe "Use j"<CR>', opts)
 ks('n', 'sr', '<cmd>set splitright<CR><cmd>vsplit<CR>', opts)
 ks('n', 'sd', '<cmd>set splitbelow<CR><cmd>split<CR>', opts)
 
+ks('n', '<C-h>', '<C-w>h', opts)
+ks('n', '<C-l>', '<C-w>l', opts)
+ks('n', '<C-j>', '<C-w>j', opts)
+ks('n', '<C-k>', '<C-w>k', opts)
+

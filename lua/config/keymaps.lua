@@ -29,5 +29,11 @@ ks('n', '<C-j>', '<C-w>j', opts)
 ks('n', '<C-k>', '<C-w>k', opts)
 
 -- Format the whole file
-ks('n', '<leader>f', 'gg=G', opts)
+ks('n', '<leader>f', function()
+  vim.lsp.buf.format()
+end)
+
+-- Go to definition/declaration
+ks('n', 'gd', '<cmd>FzfLua lsp_definitions<CR>', opts)
+ks('n', 'gD', '<cmd>FzfLua lsp_declarations<CR>', opts)
 

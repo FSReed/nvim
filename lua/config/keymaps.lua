@@ -28,3 +28,6 @@ ks('n', '<C-l>', '<C-w>l', opts)
 ks('n', '<C-j>', '<C-w>j', opts)
 ks('n', '<C-k>', '<C-w>k', opts)
 
+-- Format the whole file
+ks('n', '<leader>f', 'gg=G', opts)
+

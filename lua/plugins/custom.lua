@@ -23,4 +23,11 @@ return {
       opts.keymap.preset = "default"
     end,
   },
+  {
+    "folke/snacks.nvim",
+    opts = function(_, opts)
+      -- I use neovide, I don't need scroll animation :)
+      opts.scroll.enabled = false
+    end,
+  },
 }

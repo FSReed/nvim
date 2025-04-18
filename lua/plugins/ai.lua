@@ -15,8 +15,14 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "j-hui/fidget.nvim",
     },
     opts = {
+      display = {
+        chat = {
+          intro_message = "✨ Press `?` for help. Press 'ga' to choose model.",
+        },
+      },
       adapters = {
         siliconflow = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
@@ -82,6 +88,9 @@ return {
       { "<leader>ai", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
       { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = "v", desc = "CodeCompanion Inline Assistance" },
     },
+    init = function()
+      require("plugins.codecompanion.fidget"):init()
+    end,
   },
 
   -- Use render-markdown to render the chat buffer

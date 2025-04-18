@@ -1,3 +1,5 @@
+-- some custom configs
+
 return {
   {
     -- The search count will appear randomly on the screen with scroll animation
@@ -24,78 +26,13 @@ return {
     end,
   },
 
-  -- AI Integration, with codecompanion.nvim
-  -- With aliyun and siliconflow api key
   {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      adapters = {
-        siliconflow = function()
-          return require("codecompanion.adapters").extend("openai_compatible", {
-            formatted_name = "SiliconFlow",
-            env = {
-              url = "https://api.siliconflow.cn",
-              api_key = function()
-                return os.getenv("SILICON_API_KEY")
-              end,
-              chat_url = "/v1/chat/completions",
-            },
-            schema = {
-              model = {
-                default = "deepseek-ai/DeepSeek-V3",
-              },
-            },
-          })
-        end,
-        aliyun = function()
-          return require("codecompanion.adapters").extend("openai_compatible", {
-            formatted_name = "Aliyun",
-            env = {
-              url = "https://dashscope.aliyuncs.com",
-              api_key = function()
-                return os.getenv("ALIYUN_API_KEY")
-              end,
-              chat_url = "/compatible-mode/v1/chat/completions",
-            },
-            schema = {
-              model = {
-                default = "deepseek-v3",
-              },
-            },
-          })
-        end,
-      },
-      strategies = {
-        chat = {
-          adapter = "aliyun",
-          roles = {
-            llm = function(adapter)
-              return "🤖 " .. adapter.formatted_name
-            end,
-            user = "Me 🤔",
-          },
-        },
-        inline = {
-          adapter = "aliyun",
-          roles = {
-            llm = function(adapter)
-              return adapter.formatted_name
-            end,
-            user = "Me 🤔",
-          },
-        },
-      },
-    },
-    keys = {
-      { "<leader>ai", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
-      { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = "v", desc = "CodeCompanion Inline Assistance" },
-    },
-    config = function(_, opts)
-      require("codecompanion").setup(opts)
-    end,
-  },
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  }
 }

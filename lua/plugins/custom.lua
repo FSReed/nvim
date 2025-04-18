@@ -25,7 +25,7 @@ return {
   },
 
   -- AI Integration, with codecompanion.nvim
-  -- Need a siliconflow api as system environment variable
+  -- With aliyun and siliconflow api key
   {
     "olimorris/codecompanion.nvim",
     dependencies = {
@@ -50,13 +50,29 @@ return {
             },
           })
         end,
+        aliyun = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "https://dashscope.aliyuncs.com",
+              api_key = function()
+                return os.getenv("ALIYUN_API_KEY")
+              end,
+              chat_url = "/compatible-mode/v1/chat/completions",
+            },
+            schema = {
+              model = {
+                default = "deepseek-v3",
+              },
+            },
+          })
+        end,
       },
       strategies = {
         chat = {
-          adapter = "siliconflow",
+          adapter = "aliyun",
         },
         inline = {
-          adapter = "siliconflow",
+          adapter = "aliyun",
         },
       },
     },

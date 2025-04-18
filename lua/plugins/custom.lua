@@ -23,11 +23,49 @@ return {
       opts.keymap.preset = "default"
     end,
   },
+
+  -- AI Integration, with codecompanion.nvim
+  -- Need a siliconflow api as system environment variable
   {
-    "folke/snacks.nvim",
-    opts = function(_, opts)
-      -- I use neovide, I don't need scroll animation :)
-      opts.scroll.enabled = false
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      adapters = {
+        siliconflow = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "https://api.siliconflow.cn",
+              api_key = function()
+                return os.getenv("SILICON_API_KEY")
+              end,
+              chat_url = "/v1/chat/completions",
+            },
+            schema = {
+              model = {
+                default = "deepseek-ai/DeepSeek-V3",
+              },
+            },
+          })
+        end,
+      },
+      strategies = {
+        chat = {
+          adapter = "siliconflow",
+        },
+        inline = {
+          adapter = "siliconflow",
+        },
+      },
+    },
+    keys = {
+      { "<leader>ai", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
+      { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = "v", desc = "CodeCompanion Inline Assistance" },
+    },
+    config = function(_, opts)
+      require("codecompanion").setup(opts)
     end,
   },
 }

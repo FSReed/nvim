@@ -36,6 +36,7 @@ return {
       adapters = {
         siliconflow = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
+            formatted_name = "SiliconFlow",
             env = {
               url = "https://api.siliconflow.cn",
               api_key = function()
@@ -52,6 +53,7 @@ return {
         end,
         aliyun = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
+            formatted_name = "Aliyun",
             env = {
               url = "https://dashscope.aliyuncs.com",
               api_key = function()
@@ -70,9 +72,21 @@ return {
       strategies = {
         chat = {
           adapter = "aliyun",
+          roles = {
+            llm = function(adapter)
+              return "🤖 " .. adapter.formatted_name
+            end,
+            user = "Me 🤔",
+          },
         },
         inline = {
           adapter = "aliyun",
+          roles = {
+            llm = function(adapter)
+              return adapter.formatted_name
+            end,
+            user = "Me 🤔",
+          },
         },
       },
     },

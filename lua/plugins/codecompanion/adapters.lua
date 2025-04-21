@@ -44,12 +44,12 @@ return {
           type = "enum",
           desc = "ID of the model to use. See the model endpoint compatibility table for details on which models work with the Chat API.",
           ---@type string|fun(): string
-          default = "deepseek-v3",
+          default = "qwen-max-latest",
           choices = {
             "deepseek-r1",
             "deepseek-v3",
-            "deepseek-r1-distill-llama-70b",
             "deepseek-r1-distill-qwen-1.5b",
+            "qwen-max-latest",
           },
         },
       },

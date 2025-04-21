@@ -1,6 +1,7 @@
 -- AI Integration, now using CodeCompanion
--- Need aliyun, siliconflow and deepseek api key set as environment variables
--- See codecompanion/Get_Key.lua for the key names
+-- Ensure the following API keys are set as environment variables:
+-- ALIYUN_API_KEY, SILICON_API_KEY, and DEEPSEEK_API_KEY
+-- For more details, refer to codecompanion/Get_Key.lua
 
 return {
   {
@@ -13,8 +14,7 @@ return {
     },
     opts = require("plugins.codecompanion.configs"),
     keys = {
-      { "<leader>ai", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions" },
-      { "<leader>ai", "<cmd>CodeCompanionActions<cr>", mode = { "v" }, desc = "CodeCompanion Actions(Inline)" },
+      { "<leader>ai", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanion Actions", mode = { "n", "v" } },
     },
     init = function()
       require("plugins.codecompanion.fidget"):init()
@@ -24,6 +24,6 @@ return {
   -- Use render-markdown to render the chat buffer
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    ft = { "codecompanion" },
+    ft = { "markdown", "codecompanion" },
   },
 }

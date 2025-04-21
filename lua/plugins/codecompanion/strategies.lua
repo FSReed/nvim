@@ -16,7 +16,7 @@ return {
     roles = codecompanion_roles,
   },
   inline = {
-    adapter = "aliyun",
+    adapter = "siliconflow",
     roles = codecompanion_roles,
   },
   agent = {

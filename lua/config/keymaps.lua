@@ -6,3 +6,8 @@ local opts = { noremap = true, silent = true }
 
 -- In terminal mode
 keyset("t", "<Esc>", "<C-\\><C-n>", opts)
+
+-- Interact with system clipboard
+keyset("v", "Y", "\"+y", opts) -- Yank
+keyset({"n", "v"}, "P", "\"+p", opts) -- Paste
+keyset("i", "<C-v>", "<C-r>+", opts) -- Paste in insert mode

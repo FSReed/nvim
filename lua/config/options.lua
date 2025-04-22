@@ -6,6 +6,7 @@
 vim.o.winbar = "%=%m %f"
 
 -- WSL clipboard settings
+vim.o.clipboard = ""
 vim.g.clipboard = {
   name = "WslClipboard",
   copy = {

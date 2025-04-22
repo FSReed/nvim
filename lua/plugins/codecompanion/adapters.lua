@@ -48,8 +48,15 @@ return {
           choices = {
             "deepseek-r1",
             "deepseek-v3",
-            "deepseek-r1-distill-qwen-1.5b",
+            "deepseek-r1-distill-qwen-1.5b", -- Free, for test
+            "qwen-max",
             "qwen-max-latest",
+            "qwq-plus",
+            "qwq-plus-latest",
+            "qwen-max-2025-01-25",
+            "qwen-max-0919",
+            "qwen-max-0428",
+            "qwen-max-0403",
           },
         },
       },

@@ -75,6 +75,7 @@ return {
           default = "deepseek-reasoner",
           choices = {
             "deepseek-chat",
+            "deepseek-reasoner",
           },
         },
       },

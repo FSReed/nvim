@@ -6,8 +6,5 @@ return {
   },
   action_palette = {
     provider = "telescope", -- Use telescope, instead of mini.pick
-    opts = {
-      show_default_prompt_library = false,
-    },
   },
 }

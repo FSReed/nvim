@@ -19,3 +19,5 @@ vim.g.clipboard = {
   },
   cache_enabled = 1,
 }
+
+vim.g.lazyvim_picker = "fzf"

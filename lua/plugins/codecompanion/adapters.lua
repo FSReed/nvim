@@ -72,11 +72,7 @@ return {
       },
       schema = {
         model = {
-          default = "deepseek-reasoner",
-          choices = {
-            "deepseek-chat",
-            "deepseek-reasoner",
-          },
+          default = "deepseek-chat",
         },
       },
     })

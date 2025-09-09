@@ -6,40 +6,78 @@ return {
       {
         elements = {
           {
-            id = "watches",
-            size = 0.5,
+            id = "stacks",
+            size = 0.25,
           },
-          -- {
-          --   id = "scopes",
-          --   size = 0.2,
-          -- },
+          {
+            id = "breakpoints",
+            size = 0.25,
+          },
           {
             id = "repl",
-            size = 0.5,
+            size = 0.25,
+          },
+          {
+            id = "console",
+            size = 0.25,
+          },
+        },
+        position = "bottom",
+        size = 0.2,
+      },
+      {
+        elements = {
+          {
+            id = "scopes",
+            size = 1,
           },
           -- {
-          --   id = "stacks",
+          --   id = "watches",
           --   size = 0.25,
           -- },
         },
         position = "left",
         size = 0.5,
       },
-      {
-        elements = {
-          {
-            id = "console",
-            size = 1,
-          },
-          -- {
-          --   id = "breakpoints",
-          --   size = 0.5,
-          -- },
-        },
-        position = "bottom",
-        size = 0.2,
-      },
     },
+    -- layouts = {
+    --   {
+    --     elements = {
+    --       {
+    --         id = "watches",
+    --         size = 0.5,
+    --       },
+    --       -- {
+    --       --   id = "scopes",
+    --       --   size = 0.2,
+    --       -- },
+    --       {
+    --         id = "repl",
+    --         size = 0.5,
+    --       },
+    --       -- {
+    --       --   id = "stacks",
+    --       --   size = 0.25,
+    --       -- },
+    --     },
+    --     position = "left",
+    --     size = 0.5,
+    --   },
+    --   {
+    --     elements = {
+    --       {
+    --         id = "console",
+    --         size = 1,
+    --       },
+    --       -- {
+    --       --   id = "breakpoints",
+    --       --   size = 0.5,
+    --       -- },
+    --     },
+    --     position = "bottom",
+    --     size = 0.2,
+    --   },
+    -- },
     -- mappings = {
     --   edit = "e",
     --   expand = { "<CR>", "<2-LeftMouse>" },

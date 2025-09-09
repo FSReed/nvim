@@ -3,28 +3,28 @@ return {
     "mfussenegger/nvim-dap",
     keys = {
       {
-        "<F5>",
+        "<Enter>",
         function()
           require("dap").continue()
         end,
         desc = "Continue",
       },
       {
-        "<F6>",
+        "<Right>",
         function()
           require("dap").step_into()
         end,
         desc = "Step Into",
       },
       {
-        "<F7>",
+        "<Down>",
         function()
           require("dap").step_over()
         end,
         desc = "Step Over",
       },
       {
-        "<F8>",
+        "<Left>",
         function()
           require("dap").step_out()
         end,

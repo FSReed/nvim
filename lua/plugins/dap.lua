@@ -5,19 +5,26 @@ return {
       {
         "<F5>",
         function()
+          require("dap").continue()
+        end,
+        desc = "Continue",
+      },
+      {
+        "<F6>",
+        function()
           require("dap").step_into()
         end,
         desc = "Step Into",
       },
       {
-        "<F6>",
+        "<F7>",
         function()
           require("dap").step_over()
         end,
         desc = "Step Over",
       },
       {
-        "<F7>",
+        "<F8>",
         function()
           require("dap").step_out()
         end,

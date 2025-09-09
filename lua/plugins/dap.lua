@@ -30,6 +30,14 @@ return {
         end,
         desc = "Step Out",
       },
+      {
+        "<leader>dL",
+        function()
+          local message = vim.fn.input("Log message: ")
+          require("dap").set_breakpoint(nil, nil, message)
+        end,
+        desc = "Set Log BreakPoint"
+      },
     },
   },
 }

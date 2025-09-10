@@ -4,6 +4,7 @@ return {
   opts = {
     -- Don't show default adapters
     show_defaults = false,
+    show_model_choices = true,
   },
   siliconflow = function()
     return require("codecompanion.adapters").extend("openai_compatible", {
@@ -17,11 +18,13 @@ return {
       },
       schema = {
         model = {
-          default = "Qwen/Qwen2.5-72B-Instruct-128K",
+          default = "moonshotai/Kimi-K2-Instruct-0905",
           choices = {
-            "Qwen/Qwen2.5-72B-Instruct-128K",
-            "deepseek-ai/DeepSeek-V3",
-            "deepseek-ai/DeepSeek-R1",
+            -- "Qwen/Qwen2.5-72B-Instruct-128K",
+            -- "deepseek-ai/DeepSeek-V3",
+            -- "deepseek-ai/DeepSeek-R1",
+            "deepseek-ai/DeepSeek-V3.1",
+            "moonshotai/Kimi-K2-Instruct-0905",
           },
         },
       },
@@ -46,33 +49,37 @@ return {
           ---@type string|fun(): string
           default = "qwen-max-latest",
           choices = {
-            "deepseek-r1",
-            "deepseek-v3",
-            "deepseek-r1-distill-qwen-1.5b", -- Free, for test
-            "qwen-max",
+            -- "deepseek-r1",
+            -- "deepseek-v3",
+            -- "deepseek-r1-distill-qwen-1.5b", -- Free, for test
+            -- "qwen-max",
+            "qwen-plus",
+            "qwen3-max-preview",
             "qwen-max-latest",
-            "qwq-plus",
-            "qwq-plus-latest",
-            "qwen-max-2025-01-25",
-            "qwen-max-0919",
-            "qwen-max-0428",
-            "qwen-max-0403",
+            -- "Moonshot-Kimi-K2-Instruct",
+            -- "qwq-plus",
+            -- "qwq-plus-latest",
+            -- "qwen-max-2025-01-25",
+            -- "qwen-max-0919",
+            -- "qwen-max-0428",
+            -- "qwen-max-0403",
           },
         },
       },
     })
   end,
   deepseek = function()
-    return require("codecompanion.adapters").extend("deepseek", {
-      formatted_name = "Deepseek",
-      env = {
-        api_key = function()
-          return require("plugins.codecompanion.Get_Key"):deepseek_key()
-        end,
-      },
+    return require("codecompanion.adapters").extend("deepseek", {})
+  end,
+  gemini = function()
+    return require("codecompanion.adapters").extend("gemini", {
       schema = {
         model = {
-          default = "deepseek-chat",
+          default = "gemini-2.5-flash",
+          choices = {
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+          },
         },
       },
     })

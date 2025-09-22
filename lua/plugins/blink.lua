@@ -6,6 +6,18 @@ return {
       keymap = {
         preset = "default",
       },
+      cmdline = {
+        enabled = true,
+        keymap = { preset = "cmdline" },
+        completion = {
+          list = { selection = { preselect = false } },
+          menu = {
+            auto_show = function()
+              return vim.fn.getcmdtype() == ":"
+            end,
+          },
+        },
+      },
     },
   },
 }

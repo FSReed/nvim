@@ -30,10 +30,10 @@ return {
 
               -- Check https://go.dev/gopls/analyzers for more information
               analyses = {},
+              -- staticcheck = true,
 
               usePlaceholders = true,
               -- completeUnimported = true,
-              -- staticcheck = true,
               directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
               semanticTokens = true,
             },

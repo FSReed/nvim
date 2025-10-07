@@ -21,3 +21,6 @@ vim.g.clipboard = {
 }
 
 vim.g.lazyvim_picker = "fzf"
+
+vim.opt.colorcolumn = "120"
+vim.cmd [[highlight Colorcolumn guibg=#1f1e33]]

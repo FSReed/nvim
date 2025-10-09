@@ -22,5 +22,8 @@ vim.g.clipboard = {
 
 vim.g.lazyvim_picker = "fzf"
 
+vim.g.autoformat = false
+vim.lsp.set_log_level("OFF")
+
 vim.opt.colorcolumn = "120"
 vim.cmd [[highlight Colorcolumn guibg=#1f1e33]]

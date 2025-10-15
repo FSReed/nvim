@@ -27,3 +27,5 @@ vim.lsp.set_log_level("OFF")
 
 vim.opt.colorcolumn = "120"
 vim.cmd [[highlight Colorcolumn guibg=#1f1e33]]
+
+vim.g.lazyvim_python_lsp = "basedpyright"

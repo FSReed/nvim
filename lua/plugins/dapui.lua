@@ -1,5 +1,27 @@
+local optional = {
+  width = 120,
+  height = 40,
+  position = "center",
+}
+
 return {
   "rcarriga/nvim-dap-ui",
+  keys = {
+    {
+      "<leader>dc",
+      function()
+        require("dapui").float_element("console", optional)
+      end,
+      desc = "dap-ui: Console",
+    },
+    {
+      "<leader>dr",
+      function()
+        require("dapui").float_element("repl", optional)
+      end,
+      desc = "dap-ui: Repl",
+    },
+  },
   opts = {
     force_buffers = true,
     layouts = {
@@ -7,19 +29,11 @@ return {
         elements = {
           {
             id = "stacks",
-            size = 0.25,
+            size = 0.5,
           },
           {
             id = "breakpoints",
-            size = 0.25,
-          },
-          {
-            id = "repl",
-            size = 0.25,
-          },
-          {
-            id = "console",
-            size = 0.25,
+            size = 0.5,
           },
         },
         position = "bottom",

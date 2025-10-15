@@ -38,6 +38,14 @@ return {
         end,
         desc = "Set Log BreakPoint"
       },
+      { "<leader>da", false },
+      { "<leader>dc", false },
+      { "<leader>dr", false },
+      { "<leader>dg", false },
+      { "<leader>di", false },
+      { "<leader>dl", false },
+      { "<leader>do", false },
+      { "<leader>dO", false },
     },
   },
 }

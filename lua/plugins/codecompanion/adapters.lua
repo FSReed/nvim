@@ -47,15 +47,17 @@ return {
           type = "enum",
           desc = "ID of the model to use. See the model endpoint compatibility table for details on which models work with the Chat API.",
           ---@type string|fun(): string
-          default = "qwen-max-latest",
+          default = "qwen3-max-preview",
           choices = {
             -- "deepseek-r1",
             -- "deepseek-v3",
             -- "deepseek-r1-distill-qwen-1.5b", -- Free, for test
             -- "qwen-max",
-            "qwen-plus",
+            -- "qwen-plus",
             "qwen3-max-preview",
-            "qwen-max-latest",
+            "deepseek-v3.2-exp",
+            "Moonshot-Kimi-K2-Instruct",
+            -- "qwen-max-latest",
             -- "Moonshot-Kimi-K2-Instruct",
             -- "qwq-plus",
             -- "qwq-plus-latest",

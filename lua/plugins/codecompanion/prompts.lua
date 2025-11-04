@@ -30,4 +30,19 @@ return {
       },
     },
   },
+
+  ["Translate"] = {
+    strategy = "inline",
+    description = "Translate between Chinese and English",
+    opts = {
+      modes = { "v" },
+      short_name = "translate",
+    },
+    prompts = {
+      {
+        role = "user",
+        content = [[Translate the given text into English. If the given text is English, translate it back to Chinese]],
+      },
+    },
+  },
 }
